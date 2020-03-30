@@ -1,0 +1,57 @@
+.selection-container{
+    width: 300px;
+    height: 40rem;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 2rem;
+    text-align: center;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+
+.label{
+font-size: 25px;
+margin-left:1rem;
+}
+
+.wd-60{
+    width: 60%;
+}
+
+.pd-2{
+    padding: 2rem;
+}
+
+.pizza-base-select{
+    width: 12rem;
+    height: 3rem;
+}
+
+.m-2{
+    margin: 2rem;
+}
+
+.mt-4{
+    margin-top : 2rem;
+}
+
+li{
+    font-size:18px;
+}
+
+.success {background-color: #4CAF50;} /* Green */
+.btn {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left:4rem;
+  }
+
+  .ft{
+      font-size: 18px;
+  }

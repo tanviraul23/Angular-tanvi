@@ -1,0 +1,49 @@
+<div fxLayout="row" class="pd-2">
+  <div class="icon">
+    <img width="50px" src="./assets/images/my_pizza icon.png" alt="">
+    <label class="label">{{title}}</label>
+  </div>
+</div>
+<form [formGroup]="pizzaObj">
+  <div fxLayout="row">
+    <div fxFlex="20%" class="selection-container">
+      <mat-button-toggle-group class="m-2" #group="matButtonToggleGroup" formControlName="type">
+        <mat-button-toggle value="Veg" aria-label="Text align left">
+          <span>Veg</span>
+        </mat-button-toggle>
+        <mat-button-toggle value="Non Veg" aria-label="Text align center">
+          <span>Non Veg</span>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <ng5-slider class="m-1 wd-60" [(value)]="value" [options]="options" formControlName="price"></ng5-slider>
+      <select class="pizza-base-select m-2" matNativeControl formControlName="base">
+        <option label="Pizza Base"></option>
+        <option *ngFor="let base of pizzaBase" [value]="base">{{base}}</option>
+      </select>
+      <select class="pizza-base-select m-2" matNativeControl formControlName="pizzaType">
+        <option label="Pizza Type"></option>
+        <option *ngFor="let type of pizzaType" [value]="type">{{type}}</option>
+      </select>
+    </div>
+    <div fxFlex="80%" class="m-2">
+      <div *ngFor="let pizza of pizzaList">
+        <div fxLayout="row">
+          <div fxFlex="30%">
+            <img width="80%" height="80%" src="./assets/images/{{pizza.img}}">
+          </div>
+          <div fxFlex="70%">
+            <h1>{{pizza.name}}</h1>
+            <ul>
+              <li>{{pizza.base}}</li>
+              <li>{{pizza.pizzaType}}</li>
+              <li>{{pizza.type}}</li>
+            </ul>
+            <span class="mt-2 ft">{{currencyLabel}} {{pizza.price}} /-</span>
+            <button class="btn success mt-2">{{buttonLabel}}</button>
+          </div>
+        </div>
+        <hr class="mt-4">
+      </div>
+    </div>
+  </div>
+</form>
